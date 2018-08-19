@@ -1,0 +1,25 @@
+{
+  "name": "emailyee",
+  "version": "1.0.0",
+  "description": "App for collecting feedback",
+  "main": "index.js",
+  "engines": {
+    "node": "10.9.0",
+    "yarn": "1.9.4"
+  },
+  "author": "daksh",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2"
+  },
+  "scripts": {
+    "start": "node index",
+    "run": "nodemon index"
+  }
+}
