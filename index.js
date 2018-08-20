@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 require('./services/passport');
 const authRouter = require('./routes/authRoutes');
 const mongoURI = require('./config/keys').mongoURI;
+require('./models/User');
 
 mongoose
   .connect(
