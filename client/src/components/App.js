@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+
+const Header = () => <h2>Header</h2>;
+const Dashboard = () => <h2>Dashboard</h2>;
+const Landing = () => <h2>Landing</h2>;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello world</h1>
+        <Router>
+          <div>
+            <Header />
+          <Switch>
+            <Route path='/dashboard' component={Dashboard}/>
+            <Route exact path='/' component={Landing}/>
+          </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
