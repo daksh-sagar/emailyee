@@ -26,3 +26,5 @@ dev.js
 
 /client/.gitignore
 
+/client/.idea
+
