@@ -28,3 +28,5 @@ dev.js
 
 /client/.idea
 
+/client/.env.development
+/client/.env.production
