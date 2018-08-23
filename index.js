@@ -29,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Routes middleware
-app.use('/auth/google', authRouter);
+app.use('/auth', authRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
