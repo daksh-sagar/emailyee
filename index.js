@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 const cookieSession = require('cookie-session');
 const authRouter = require('./routes/authRoutes');
 const billingRouter = require('./routes/billingRoutes');
+const surveyRouter = require('./routes/surveyRoutes');
 const mongoURI = require('./config/keys').mongoURI;
 const cookieKey = require('./config/keys').cookieKey;
 
@@ -34,6 +36,7 @@ app.use(passport.session());
 
 //Routes middleware
 app.use('/auth', authRouter);
+app.use('/api/surveys', surveyRouter);
 app.use('/api', billingRouter);
 
 if (process.env.NODE_ENV === 'production') {
