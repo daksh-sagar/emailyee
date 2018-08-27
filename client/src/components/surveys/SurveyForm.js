@@ -29,7 +29,7 @@ class SurveyForm extends Component {
         <Field
           label="Recipient List"
           type="text"
-          name="emails"
+          name="recipients"
           component={SurveyField}
         />
       </div>
@@ -52,8 +52,8 @@ class SurveyForm extends Component {
 
 function validate(values) {
   const errors = {};
-  const names = ['title', 'subject', 'body', 'emails'];
-  errors.emails = validateEmails(values.emails || '');
+  const names = ['title', 'subject', 'body', 'recipients'];
+  errors.recipients = validateEmails(values.recipients || '');
 
   names.forEach(name => {
     if (!values[name]) {
