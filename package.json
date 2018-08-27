@@ -15,9 +15,12 @@
     "concurrently": "^3.6.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
+    "localtunnel": "^1.9.0",
+    "lodash": "^4.17.10",
     "mongoose": "^5.2.9",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^4.2.0",
     "sendgrid": "^5.2.3",
     "stripe": "^6.7.0"
   },
@@ -29,7 +32,8 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --cwd client install && yarn --cwd client build"
+    "dev": "concurrently \"yarn server\" \"yarn client\" \"yarn webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --cwd client install && yarn --cwd client build",
+    "webhook": "lt -p 5000 -s emailyee"
   }
 }
